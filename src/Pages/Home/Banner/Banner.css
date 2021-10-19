@@ -1,0 +1,15 @@
+/* .small-device {
+  height: 85vh;
+} */
+
+@media only screen and (max-width: 600px) {
+  .small-device {
+    height: 35vh;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1023px) {
+  .small-device {
+    height: 85vh;
+  }
+}
