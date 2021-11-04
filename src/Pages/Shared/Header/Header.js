@@ -13,9 +13,10 @@ function classNames(...classes) {
 const Header = () => {
   const { user, logOut } = useAuth();
   const [cart] = useCartAuth();
-  console.log(cart);
+
+  // console.log(cart);
   const getData = localStorage.getItem("food_cart");
-  console.log(getData);
+  // console.log(getData);
   return (
     <div>
       <Disclosure as="nav" className="bg-gray-900">

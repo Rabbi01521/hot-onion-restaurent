@@ -9,7 +9,7 @@ const useCart = (products) => {
       //   console.log(savedCart);
       const storedCart = [];
       for (const _id in savedCart) {
-        console.log(_id);
+        // console.log(_id);
         const addedProduct = products.find((product) => product._id === _id);
         if (addedProduct) {
           const quantity = savedCart[_id];
@@ -20,7 +20,7 @@ const useCart = (products) => {
       setCart(storedCart);
     }
   }, [products]);
-  console.log(cart);
+  // console.log(cart);
   return [cart, setCart];
 };
 

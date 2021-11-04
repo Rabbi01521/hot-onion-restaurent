@@ -9,7 +9,7 @@ import CartPrice from "./CartPrice";
 const Cart = () => {
   const [products] = useProducts();
   const [cart, setCart] = useCart(products);
-  console.log(cart);
+  // console.log(cart);
   const history = useHistory();
 
   const handleRemove = (_id) => {

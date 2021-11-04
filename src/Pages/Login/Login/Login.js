@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
-import { useState } from "react/cjs/react.development";
 import useAuth from "../../../hooks/useAuth";
 
 const Login = () => {
@@ -16,11 +15,11 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInUsingGoogle()
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         history.push(redirect_uri);
       })
       .catch((error) => {
-        console.log(error.message);
+        // console.log(error.message);
       })
       .finally(() => {
         setIsLoading(false);

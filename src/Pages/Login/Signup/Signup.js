@@ -11,6 +11,8 @@ const Signup = () => {
     registerNewUser,
     setUserName,
     verfiyEmail,
+    setName,
+    setUser,
   } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,7 +21,7 @@ const Signup = () => {
   const [error, setError] = useState("");
   const history = useHistory();
   const location = useLocation();
-  const redirect_uri = location.state?.from || "/login";
+  const redirect_uri = location.state?.from || "/home";
 
   const handleGoogleSignIn = () => {
     signInUsingGoogle()
@@ -85,14 +87,15 @@ const Signup = () => {
       setError("Ensure string has three lowercase letters");
       return;
     } */
-    console.log(email, password);
+    // console.log(email, password);
     registerNewUser(email, password)
       .then((result) => {
         verfiyEmail();
         history.push(redirect_uri);
         setError("");
+        // setName(firstName);
         setUserName(firstName, lastName);
-
+        setUser(result.user);
         const user = result.user;
         console.log(user);
       })

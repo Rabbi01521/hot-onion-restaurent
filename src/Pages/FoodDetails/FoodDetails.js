@@ -49,7 +49,7 @@ const FoodDetails = () => {
   // console.log(findProducts);
 
   const handleAddToCart = (food) => {
-    console.log(food);
+    // console.log(food);
     const exists = cart.find((pd) => food._id === pd._id);
     let newCart = [];
     if (exists) {
@@ -67,7 +67,7 @@ const FoodDetails = () => {
   };
 
   const handleSubsToCart = (food) => {
-    console.log(food);
+    // console.log(food);
     const exists = cart.find((pd) => food._id === pd._id);
     let newCart = [];
     if (exists && exists.quantity >= 1) {

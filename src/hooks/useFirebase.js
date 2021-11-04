@@ -17,6 +17,7 @@ initializeAuthentication();
 
 const useFirebase = () => {
   const [user, setUser] = useState({});
+  const [name, setName] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const auth = getAuth();
   const signInUsingGoogle = () => {
@@ -53,15 +54,18 @@ const useFirebase = () => {
   const verfiyEmail = () => {
     setIsLoading(true);
     sendEmailVerification(auth.currentUser).then((result) => {
-      console.log(result);
+      // console.log(result);
       alert("Please Check Your Email");
     });
   };
   // observe user state change
   useEffect(() => {
     const unsubscribed = onAuthStateChanged(auth, (user) => {
+      // console.log(user.displayName);
       if (user) {
         setUser(user);
+        setName(user.displayName);
+        console.log(user.displayName);
       } else {
         setUser({});
       }
@@ -74,6 +78,7 @@ const useFirebase = () => {
     setIsLoading(true);
     signOut(auth)
       .then(() => {
+        setName("");
         console.log("sign Out");
       })
       .finally(() => {
@@ -91,6 +96,9 @@ const useFirebase = () => {
     loginNewUser,
     setUserName,
     verfiyEmail,
+    setName,
+    name,
+    setUser,
   };
 };
 

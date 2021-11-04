@@ -12,7 +12,7 @@ const PlaceOrder = () => {
   const [products] = useProducts();
   const [cart, setCart] = useCart(products);
 
-  console.log(cart);
+  // console.log(cart);
 
   const handleRemove = (_id) => {
     const removeItem = cart.filter((product) => product._id !== _id);

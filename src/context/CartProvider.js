@@ -7,7 +7,7 @@ export const CartContext = createContext();
 const CartProvider = ({ children }) => {
   const [products] = useProducts();
   const [cart] = useCart(products);
-  console.log(cart);
+  // console.log(cart);
   return <CartContext.Provider value={[cart]}>{children}</CartContext.Provider>;
 };
 
